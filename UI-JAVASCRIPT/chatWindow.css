@@ -210,7 +210,6 @@
 		display: none;
 	}
 }
-
 .kore-chat-header .chat-box-controls .expand-btn span{
     margin-top: 3px;
 	/*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAAAAAADRMNWAAAAAnRSTlMAAHaTzTgAAABWSURBVAjXdY+xDYAwDAS9/yhXJWWwZDFABgDBDklhiZaSp8h3d9IVb7ZcB+pUE1CGcPpfpNNcReBptxTXntrHIXQ+6cTHo2wNTxX82EZBA7NZgb6+9AJNFjJH3aM64AAAAABJRU5ErkJggg==);*/
@@ -288,6 +287,54 @@ ul.chat-container li .profile-photo .user-account{
     background-repeat: no-repeat;
     display: inline-block;
     background-size: 100%;
+}
+.quick_replies_btn_parent {
+    overflow: hidden;
+}
+.quick_replies_btn_parent .autoWidth {
+    display: table-row;
+}
+.buttonTmplContent .buttonTmplContentHeading.quickReply {
+    display: table;
+}
+.buttonTmplContent .buttonTmplContentChild.quickReplyDiv {
+    display: table-cell;
+    padding: 10px 10px 7px 0;
+    border: none;
+}
+.buttonTmplContent .buttonTmplContentChild .quickReply{
+    border: 1px solid #009dab;
+    padding: 4px 13px;
+    border-radius: 20px;
+    display: table;
+    white-space: nowrap;
+    color: #009dab;
+    background: #fff;
+	transition: background-color 200ms linear;
+    -webkit-transition: background-color 200ms linear;
+    -moz-transition: background-color 200ms linear;
+    -o-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+}
+.buttonTmplContent .buttonTmplContentChild .quickReply.with-img{
+    padding: 2px 13px;
+}
+.buttonTmplContent .buttonTmplContentChild .quickReply  img{
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    max-width: 34px;
+    margin: 0px 7px -2px -8px;
+}
+.buttonTmplContent .buttonTmplContentChild .quickReply:hover{
+    background: #009dab;
+    color: #fff;
+}
+.quickreplyText {
+    position: relative;
+}
+.quickreplyText.with-img {
+    top: -1px;
 }
 ul.chat-container li .messageBubble img{
 	max-width: 100%;
@@ -381,7 +428,7 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
     border-top: 1px solid #EEEEEE;
     background:white;
     padding: 5px 20px;
-}
+}	
 .sendBtnCnt .disabled {
     opacity: 0.3;
 } 
@@ -397,7 +444,6 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
     bottom: 5px;
     cursor: pointer;
 }
-
 .kore-chat-window .kore-chat-footer .chatInputBox{
     width: 100%;
     padding: 2px 0;
@@ -418,6 +464,9 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
 	font-family: "Lato", sans-serif;
 	position: absolute;
 	top: 4px;
+}
+.kore-chat-window .hide {
+	display: none!important;
 }
 .kore-chat-window .kore-chat-footer .chatSendMsg{
     font-size: 14px;
@@ -562,9 +611,6 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
 	border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.buttonTmplContent .buttonTmplContentHeading.quickReply {
-    display: table;
-}
 .buttonTmplContent .buttonTmplContentChild{
 	color: #3292FF;
 	border-top: 1px solid #F2F2F2;
@@ -573,58 +619,11 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
 	text-align: center;
 	cursor: pointer;
 }
-.quick_replies_btn_parent {
-    overflow: hidden;
-}
-.quick_replies_btn_parent .autoWidth {
-    display: table-row;
-}
-
-.buttonTmplContent .buttonTmplContentChild.quickReplyDiv {
-    display: table-cell;
-    padding: 10px 10px 7px 0;
-    border: none;
-}
-.buttonTmplContent .buttonTmplContentChild .quickReply{
-    border: 1px solid #009dab;
-    padding: 4px 13px;
-    border-radius: 20px;
-    display: table;
-    white-space: nowrap;
-    color: #009dab;
-    background: #fff;
-	transition: background-color 200ms linear;
-    -webkit-transition: background-color 200ms linear;
-    -moz-transition: background-color 200ms linear;
-    -o-transition: background-color 200ms linear;
-    -ms-transition: background-color 200ms linear;
-}
-.buttonTmplContent .buttonTmplContentChild .quickReply.with-img{
-    padding: 2px 13px;
-}
-.buttonTmplContent .buttonTmplContentChild .quickReply  img{
-    height: 17px;
-	width: 17px;
-	border-radius: 50%;
-	max-width: 34px;
-    margin: 0px 7px -2px -8px;
-}
-.buttonTmplContent .buttonTmplContentChild .quickReply:hover{
-    background: #009dab;
-    color: #fff;
-}
 .buttonTmplContent .buttonTmplContentChild img{
     max-width: 100%;
     height: auto;
     width: auto;
 }
-.quickreplyText {
-    position: relative;
-}
-.quickreplyText.with-img {
-    top: -1px;
-}
-
 .listTmplContent .listTmplContentBox{
 	float:left;
 	color:#333;
@@ -639,7 +638,7 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
 	max-width: 70%;
 }
 .listTmplContent .listLeftContent{
-	display:table-cell;
+	display: table-cell;
     vertical-align: top;
 }
 .listTmplContent .listRightContent{
@@ -669,7 +668,7 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
     cursor: pointer;
 }
 .listTmplContent .buyBtn{
-	background: #FFF;
+    background: #FFF;
     border: 0;
     color: #0079FF!important;
     cursor: pointer;
@@ -684,7 +683,7 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
 	border-top:0;
 }
 .listTmplContent .listTmplContentHeading{
-	padding:10px;
+	padding: 10px;
     background: #f4f4f4;
     margin-bottom: 0;
     border-radius: 12px 12px 0 0;
@@ -692,7 +691,7 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
 }
 .listTmplContent .listItemTitle,.listItemSubtitle,.listItemPath{
 	padding: 3px 0;
-    font-size: 13px;
+    font-size:13px;
 }
 .listItemTitle {
     font-family: Lato;
@@ -808,20 +807,26 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
 .fa-paperclip:before {
     content: "\f0c6";
 }
+.fa-sort-asc:before {
+    content: "\f0de";
+}
 .fa-volumeup:before {
     content: "\f028";
 }
 .fa-volumeoff:before {
     content: "\f026";
 }
-.fa-sort-asc:before {
-    content: "\f0de";
-}
 .fa-compress:before {
     content: "\f066";
 }
 .fa-expand:before {
     content: "\f065";
+}
+.fa-chevron-left:before {
+    content: "\f053";
+}
+.fa-chevron-right:before {
+    content: "\f054";
 }
 .sdkFooterIcon{
     display: inline-block;
@@ -1109,15 +1114,6 @@ ul.chat-container li.fromOtherUsers.with-icon .extra-info{
 }
 .videoEle video{
     width: 100% !important;
-}
-
-
-
-.fa-chevron-left:before {
-    content: "\f053";
-}
-.fa-chevron-right:before {
-    content: "\f054";
 }
 ul.chat-container li.quickReplies {
     padding-right: 20px;
